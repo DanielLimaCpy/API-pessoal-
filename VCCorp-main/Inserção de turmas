@@ -1,0 +1,24 @@
+import json
+
+turmas = []
+
+def adicionar_turma(turma):
+    turmas.append(turma)
+
+def listar_todas_as_turmas():
+    for turma in turmas:
+        print(turma)
+
+def exportar_para_json():
+    with open("turmas.json", "w") as file:
+        turmas_json = [turma for turma in turmas]
+        json.dump(turmas_json, file)
+
+# Exemplo de uso
+adicionar_turma("1A")
+adicionar_turma("1B")
+adicionar_turma("1C")
+adicionar_turma("1D")
+
+listar_todas_as_turmas()
+exportar_para_json()
